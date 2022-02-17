@@ -1,0 +1,49 @@
+.card {
+  width: 500px;
+  height: 250px;
+  background: #ffffff4a;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 15px;
+  width: 150px;
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.success {
+  background-color: #2fcf6f;
+}
+
+.error {
+  background-color: #e10000;
+}
+
+.info {
+  background-color: #204b90;
+}
+
+.warning {
+  background-color: #ffb800;
+}
