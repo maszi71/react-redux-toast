@@ -15,9 +15,8 @@ const Toast = () => {
     const interval = setInterval(() => {
       if (list.length > 0) {
         dispatch(deleteToast(list[0].id));
-        console.log(list);
       }
-    }, 5000);
+    }, 3000);
     return () => {
       clearInterval(interval);
     };

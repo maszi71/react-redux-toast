@@ -1,9 +1,15 @@
+:root {
+  --button-width: 150px;
+  --button-padding: 10px 20px;
+  --button-margin: 0 15px;
+  --button-border-radius: 5px;
+}
+
 .card {
-  width: 500px;
   height: 250px;
   background: #ffffff4a;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   display: grid;
 }
@@ -16,13 +22,13 @@
 
 .btn {
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin: 0 15px;
-  width: 150px;
+  margin: var(--button-margin);
+  width: var(--button-width);
   font-weight: 700;
 }
 
@@ -47,3 +53,19 @@
 .warning {
   background-color: #ffb800;
 }
+
+@media screen and (max-width: 600px) {
+  /* Add responsive styles here */
+  .card {
+    height: auto;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .buttons {
+    display: grid;
+  }
+}
+

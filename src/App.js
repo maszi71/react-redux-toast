@@ -1,11 +1,11 @@
 import "./App.css";
-import Buttons from "./components/Buttons";
+import ToastButtons from "./components/ToastButtons";
 import Toast from "./components/Toast";
 
 function App() {
   return (
     <div className="App">
-      <Buttons />
+      <ToastButtons />
       <Toast />
     </div>
   );
