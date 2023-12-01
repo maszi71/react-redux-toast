@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteToast } from "../redux/toastReducer";
+import ToastItem from "./ToastItem";
 import "./Toast.css";
 
 const Toast = () => {
@@ -25,49 +26,7 @@ const Toast = () => {
   return (
     <div className="toast-container">
       {list.map((toast, i) => (
-        <div
-          style={{
-            backgroundColor:
-              toast.status === "success"
-                ? "#EAF7EE"
-                : toast.status === "error"
-                ? "#FCEDE9"
-                : toast.status === "warning"
-                ? "#FEF7EA"
-                : toast.status === "info"
-                ? "#E6EFFA"
-                : "",
-          }}
-          key={i}
-          className="toast"
-        >
-          <div className="toast-box">
-            <div
-              style={{
-                backgroundColor:
-                  toast.status === "success"
-                    ? "#2FCF6F"
-                    : toast.status === "error"
-                    ? "#E10000"
-                    : toast.status === "warning"
-                    ? "#FFB800"
-                    : toast.status === "info"
-                    ? "#204B90"
-                    : "",
-              }}
-              className="icon-container"
-            >
-              <span className="toast-icon fas fa-circle-exclamation"></span>
-            </div>
-            <p className="toast-message">{toast.description}</p>
-          </div>
-          <button
-            onClick={() => removeToast(toast.id)}
-            className="btn close-btn"
-          >
-            <span className="close-icon fas fa-close"></span>
-          </button>
-        </div>
+        <ToastItem key={i} toast={toast} removeToast={removeToast} />
       ))}
     </div>
   );
