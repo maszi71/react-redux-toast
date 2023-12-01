@@ -1,20 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteToast } from "../redux/Toast/toastAction";
+import { deleteToast } from "../redux/toastReducer";
 import "./Toast.css";
 
 const Toast = () => {
-  const [toastList, setToastList] = useState([]);
-  const list = useSelector((state) => state.toastList);
+  const list = useSelector((state) => state.toast.toastList);
   const dispatch = useDispatch();
 
   const removeToast = (toastId) => {
     dispatch(deleteToast(toastId));
   };
-  useEffect(() => {
-    setToastList(list);
-    console.log(list);
-  }, [list]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,7 +25,7 @@ const Toast = () => {
 
   return (
     <div className="toast-container">
-      {toastList.map((toast, i) => (
+      {list.map((toast, i) => (
         <div
           style={{
             backgroundColor:

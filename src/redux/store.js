@@ -1,5 +1,9 @@
-import { createStore } from "redux";
-import toastReducer from "./Toast/toastReducer";
+import { configureStore } from '@reduxjs/toolkit'
+import toastReducer from "./toastReducer";
 
-const store = createStore(toastReducer);
+const store = configureStore({
+    reducer: {
+        toast: toastReducer,
+      },
+});
 export default store;

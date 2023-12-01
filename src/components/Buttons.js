@@ -1,6 +1,6 @@
 import "./Buttons.css";
 import { useDispatch } from "react-redux";
-import { addToast } from "../redux/Toast/toastAction";
+import { addToast } from "../redux/toastReducer";
 
 const Buttons = () => {
   const dispatch = useDispatch();
